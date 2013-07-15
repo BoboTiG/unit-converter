@@ -98,20 +98,20 @@ void MainWindow::all_units() {
 
     // Surface: equivalence for 1m^2 -------------------------------------------
     tmp_v.clear(); tmp_n.clear();
-    tmp_v["m\u00B2"] = 1.0;            name = tr("square metre");         tmp_n[name] = "m\u00B2";
-    tmp_v["b"]       = 10.0e-28;       name = tr("barn");                 tmp_n[name] = "b";
-    tmp_v["sq in"]   = 6.4516e-4;      name = tr("square inch");          tmp_n[name] = "in\u00B2";
-    tmp_v["bd"]      = 7.74192e-3;     name = tr("board");                tmp_n[name] = "bd";
-    tmp_v["sq ft"]   = 0.09290304;     name = tr("square foot");          tmp_n[name] = "ft\u00B2";
-    tmp_v["sq yd"]   = 0.83612736;     name = tr("square yard");          tmp_n[name] = "yd\u00B2";
-    tmp_v["cord"]    = 1.48644864;     name = tr("cord");                 tmp_n[name] = "cord";
-    tmp_v["sq rd"]   = 25.29285264;    name = tr("square perch");         tmp_n[name] = "rd\u00B2";
-    tmp_v["a"]       = 100.0;          name = tr("are");                  tmp_n[name] = "a";
-    tmp_v["sq ch"]   = 404.68564224;   name = tr("square chain");         tmp_n[name] = "ch\u00B2";
-    tmp_v["ro"]      = 1011.7141056;   name = tr("rood");                 tmp_n[name] = "ro";
-    tmp_v["ac"]      = 4046.8564224;   name = tr("acre");                 tmp_n[name] = "ac";
-    tmp_v["ha"]      = 10000.0;        name = tr("hectare");              tmp_n[name] = "ha";
-    tmp_v["sq mi"]   = 2589.988110336; name = tr("square mile, section"); tmp_n[name] = "mi\u00B2";
+    tmp_v["m\u00B2"]  = 1.0;            name = tr("square metre");         tmp_n[name] = "m\u00B2";
+    tmp_v["b"]        = 10.0e-28;       name = tr("barn");                 tmp_n[name] = "b";
+    tmp_v["in\u00B2"] = 6.4516e-4;      name = tr("square inch");          tmp_n[name] = "in\u00B2";
+    tmp_v["bd"]       = 7.74192e-3;     name = tr("board");                tmp_n[name] = "bd";
+    tmp_v["ft\u00B2"] = 0.09290304;     name = tr("square foot");          tmp_n[name] = "ft\u00B2";
+    tmp_v["yd\u00B2"] = 0.83612736;     name = tr("square yard");          tmp_n[name] = "yd\u00B2";
+    tmp_v["cord"]     = 1.48644864;     name = tr("cord");                 tmp_n[name] = "cord";
+    tmp_v["rd\u00B2"] = 25.29285264;    name = tr("square perch");         tmp_n[name] = "rd\u00B2";
+    tmp_v["a"]        = 100.0;          name = tr("are");                  tmp_n[name] = "a";
+    tmp_v["ch\u00B2"] = 404.68564224;   name = tr("square chain");         tmp_n[name] = "ch\u00B2";
+    tmp_v["ro"]       = 1011.7141056;   name = tr("rood");                 tmp_n[name] = "ro";
+    tmp_v["ac"]       = 4046.8564224;   name = tr("acre");                 tmp_n[name] = "ac";
+    tmp_v["ha"]       = 10000.0;        name = tr("hectare");              tmp_n[name] = "ha";
+    tmp_v["mi\u00B2"] = 2589.988110336; name = tr("square mile, section"); tmp_n[name] = "mi\u00B2";
     units_values["surface"] = tmp_v; units["surface"] = tmp_n;
 
     // Time: equivalence for 1s ------------------------------------------------
