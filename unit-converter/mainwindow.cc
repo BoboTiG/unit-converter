@@ -1,3 +1,14 @@
+
+/*!
+ * \file mainwindow.cc
+ * \brief Main window for Unit converter.
+ * \author BoboTiG
+ * \date 2013.07.15
+ *
+ * Copyleft ((C)) 2013 BoboTiG
+ */
+
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -7,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // Centrage de la fenêtre
+    // Center the window
     QRect availableGeometry(QApplication::desktop()->availableGeometry());
     move((availableGeometry.width() - width()) / 2,
          (availableGeometry.height() - height()) / 2);
@@ -20,8 +31,8 @@ MainWindow::MainWindow(QWidget *parent) :
     for ( itr = units_name.begin(); itr != units_name.end(); ++itr ) {
         ui->unitBox->addItem((*itr).second, (*itr).first);
     }
-    fill_lists(ui->unitBox->itemData(0, Qt::UserRole).toString());
     unit = ui->unitBox->itemData(0, Qt::UserRole).toString();
+    fill_lists(unit);
 }
 
 MainWindow::~MainWindow() {
@@ -38,31 +49,32 @@ MainWindow::~MainWindow() {
 void MainWindow::all_units() {
     std::map<QString, double> tmp_v;
     std::map<QString, QString> tmp_n;
+    QString name;
 
     // Available units ---------------------------------------------------------
-    units_name["mass"] = "Mass (M)";
+    units_name["mass"] = tr("Mass") + " (M)";
 
     // Mass: equivalence for 1kg -----------------------------------------------
     tmp_v.clear(); tmp_n.clear();
-    tmp_v["kg"]        = 1.0;              tmp_n[tr("kilogram")] = "kg";
-    tmp_v["g"]         = 1.0e-3;           tmp_n[tr("gram")] = "g";
-    tmp_v["Y"]         = 1.0e-9;           tmp_n[tr("gamma")] = "Y";
-    tmp_v["gr"]        = 64.79891e-5;      tmp_n[tr("grain")] = "gr";
-    tmp_v["ct"]        = 200.0e-6;         tmp_n[tr("carat [metric]")] = "ct";
-    tmp_v["kt"]        = 205.196548333e-6; tmp_n[tr("carat")] = "kt";
-    tmp_v["oz"]        = 28.349523125e-3;  tmp_n[tr("ounce [avoirdupois]")] = "oz";
-    tmp_v["oz"]        = 31.1034768e-3;    tmp_n[tr("ounce")] = "oz";
-    tmp_v["lb"]        = 0.45359237;       tmp_n[tr("pound [avoirdupois]")] = "lb";
-    tmp_v["sh cwt"]    = 45.359237;        tmp_n[tr("short hundredweight, cental")] = "sh cwt";
-    tmp_v["long cwt"]  = 50.80234544;      tmp_n[tr("long hundredweight")] = "long cwt";
-    tmp_v["q"]         = 100.0;            tmp_n[tr("quintal [metric]")] = "q";
-    tmp_v["kip"]       = 453.59237;        tmp_n[tr("kip")] = "kip";
-    tmp_v["sh tn"]     = 907.18474;        tmp_n[tr("short ton")] = "sh tn";
-    tmp_v["t"]         = 1000.0;           tmp_n[tr("tonne")] = "t";
-    tmp_v["long tn"]   = 1016.0469088;     tmp_n[tr("long ton")] = "long tn";
-    tmp_v["Da"]        = 1.66054e-27;      tmp_n[tr("dalton")] = "Da";
-    tmp_v["u, uma"]    = 1.66054e-27;      tmp_n[tr("atomic mass unit")] = "u, uma";
-    units_values["mass"] = tmp_v;          units["mass"] = tmp_n;
+    tmp_v["kg"]        = 1.0;              name = tr("kilogram");                    tmp_n[name] = "kg";
+    tmp_v["g"]         = 1.0e-3;           name = tr("gram");                        tmp_n[name] = "g";
+    tmp_v["Y"]         = 1.0e-9;           name = tr("gamma");                       tmp_n[name] = "Y";
+    tmp_v["gr"]        = 64.79891e-5;      name = tr("grain");                       tmp_n[name] = "gr";
+    tmp_v["ct"]        = 200.0e-6;         name = tr("carat [metric]");              tmp_n[name] = "ct";
+    tmp_v["kt"]        = 205.196548333e-6; name = tr("carat");                       tmp_n[name] = "kt";
+    tmp_v["oz"]        = 28.349523125e-3;  name = tr("ounce [avoirdupois]");         tmp_n[name] = "oz";
+    tmp_v["oz"]        = 31.1034768e-3;    name = tr("ounce");                       tmp_n[name] = "oz";
+    tmp_v["lb"]        = 0.45359237;       name = tr("pound [avoirdupois]");         tmp_n[name] = "lb";
+    tmp_v["sh cwt"]    = 45.359237;        name = tr("short hundredweight, cental"); tmp_n[name] = "sh cwt";
+    tmp_v["long cwt"]  = 50.80234544;      name = tr("long hundredweight");          tmp_n[name] = "long cwt";
+    tmp_v["q"]         = 100.0;            name = tr("quintal");                     tmp_n[name] = "q";
+    tmp_v["kip"]       = 453.59237;        name = tr("kip");                         tmp_n[name] = "kip";
+    tmp_v["sh tn"]     = 907.18474;        name = tr("short ton");                   tmp_n[name] = "sh tn";
+    tmp_v["t"]         = 1000.0;           name = tr("tonne");                       tmp_n[name] = "t";
+    tmp_v["long tn"]   = 1016.0469088;     name = tr("long ton");                    tmp_n[name] = "long tn";
+    tmp_v["Da"]        = 1.66054e-27;      name = tr("dalton");                      tmp_n[name] = "Da";
+    tmp_v["u, uma"]    = 1.66054e-27;      name = tr("atomic mass unit");            tmp_n[name] = "u, uma";
+    units_values["mass"] = tmp_v; units["mass"] = tmp_n;
 }
 
 

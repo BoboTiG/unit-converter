@@ -1,11 +1,13 @@
 #-------------------------------------------------
 #
+# Unit converter
+# Copyleft ((C)) 2013 BoboTiG
+#
 # Project created by QtCreator 2013-07-12T15:41:40
 #
 #-------------------------------------------------
 
-QT += core gui
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT += core gui widgets
 
 TARGET       = unit-converter
 TEMPLATE     = app

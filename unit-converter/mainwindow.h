@@ -1,3 +1,14 @@
+
+/*!
+ * \file mainwindow.h
+ * \brief Main window headers for Unit converter.
+ * \author BoboTiG
+ * \date 2013.07.15
+ *
+ * Copyleft ((C)) 2013 BoboTiG
+ */
+
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
