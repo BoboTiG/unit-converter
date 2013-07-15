@@ -41,7 +41,7 @@ public:
     ~MainWindow();
     
 private slots:
-    void fill_lists(QString unit);
+    void fill_lists(const int index);
     void convert();
     void all_units();
     void on_unitBox_currentIndexChanged(int index);

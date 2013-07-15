@@ -31,8 +31,7 @@ MainWindow::MainWindow(QWidget *parent) :
     for ( itr = units_name.begin(); itr != units_name.end(); ++itr ) {
         ui->unitBox->addItem((*itr).second, (*itr).first);
     }
-    unit = ui->unitBox->itemData(0, Qt::UserRole).toString();
-    fill_lists(unit);
+    fill_lists(0);
 }
 
 MainWindow::~MainWindow() {
@@ -53,6 +52,7 @@ void MainWindow::all_units() {
 
     // Available units ---------------------------------------------------------
     units_name["mass"] = tr("Mass") + " (M)";
+    units_name["time"] = tr("Time") + " (s)";
 
     // Mass: equivalence for 1kg -----------------------------------------------
     tmp_v.clear(); tmp_n.clear();
@@ -75,6 +75,16 @@ void MainWindow::all_units() {
     tmp_v["Da"]        = 1.66054e-27;      name = tr("dalton");                      tmp_n[name] = "Da";
     tmp_v["u, uma"]    = 1.66054e-27;      name = tr("atomic mass unit");            tmp_n[name] = "u, uma";
     units_values["mass"] = tmp_v; units["mass"] = tmp_n;
+
+    // Time: equivalence for 1s ------------------------------------------------
+    tmp_v.clear(); tmp_n.clear();
+    tmp_v["s"]    = 1.0;             name = tr("second");        tmp_n[name] = "s";
+    tmp_v["m"]    = 60.0;            name = tr("minute");        tmp_n[name] = "m";
+    tmp_v["h"]    = 3600.0;          name = tr("hour");          tmp_n[name] = "h";
+    tmp_v["d"]    = 24 * 3600.0;     name = tr("day");           tmp_n[name] = "d";
+    tmp_v["y"]    = 31556952;        name = tr("year");          tmp_n[name] = "y";
+    tmp_v["tP"]   = 1.351211818e-43; name = tr("Planck time");   tmp_n[name] = "tP";
+    units_values["time"] = tmp_v; units["time"] = tmp_n;
 }
 
 
@@ -82,16 +92,20 @@ void MainWindow::all_units() {
  * @brief Fill lists for a given unit.
  * @date 2013/07/15
  */
-void MainWindow::fill_lists(QString chosen_unit) {
+void MainWindow::fill_lists(const int index) {
+    unit = ui->unitBox->itemData(index, Qt::UserRole).toString();
+
+    // Clear lists and input
+    ui->inputBox->clear();
+    ui->convertBox->clear();
+    ui->inputLineEdit->clear();
+
+    QString tmp;
     std::map<QString, QString>::const_iterator itr;
-    if ( unit != chosen_unit ) {
-        unit = chosen_unit;
-        QString tmp;
-        for ( itr = units[unit].begin(); itr != units[unit].end(); ++itr ) {
-            tmp = QString("%1 (%2)").arg((*itr).first, (*itr).second);
-            ui->inputBox->addItem(tmp, (*itr).second);
-            ui->convertBox->addItem(tmp, (*itr).second);
-        }
+    for ( itr = units[unit].begin(); itr != units[unit].end(); ++itr ) {
+        tmp = QString("%1 (%2)").arg((*itr).first, (*itr).second);
+        ui->inputBox->addItem(tmp, (*itr).second);
+        ui->convertBox->addItem(tmp, (*itr).second);
     }
 }
 
@@ -101,7 +115,7 @@ void MainWindow::fill_lists(QString chosen_unit) {
  * @date 2013/07/12
  */
 void MainWindow::on_unitBox_currentIndexChanged(int index) {
-    fill_lists(ui->unitBox->itemData(index, Qt::UserRole).toString());
+    fill_lists(index);
 }
 
 
