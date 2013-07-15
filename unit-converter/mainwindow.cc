@@ -51,8 +51,27 @@ void MainWindow::all_units() {
     QString name;
 
     // Available units ---------------------------------------------------------
-    units_name["mass"] = tr("Mass") + " (M)";
-    units_name["time"] = tr("Time") + " (s)";
+    units_name["length"] = tr("Length") + " (m)";
+    units_name["mass"]   = tr("Mass") + " (M)";
+    units_name["time"]   = tr("Time") + " (s)";
+
+    // Length: equivalence for 1m ----------------------------------------------
+    tmp_v.clear(); tmp_n.clear();
+    tmp_v["m"]    = 1.0;                name = tr("meter");               tmp_n[name] = "m";
+    tmp_v["cm"]   = 1.0e-2;             name = tr("centimeter");          tmp_n[name] = "cm";
+    tmp_v["fm"]   = 1.0e-15;            name = tr("femtometer");          tmp_n[name] = "fm";
+    tmp_v["xu"]   = 100.21e-15;         name = tr("x-unit");              tmp_n[name] = "xu";
+    tmp_v["Å"]    = 1.0e-10;            name = tr("ångström").toLatin1(); tmp_n[name] = "Å";
+    tmp_v["in"]   = 2.54e-2;            name = tr("inch");                tmp_n[name] = "in";
+    tmp_v["ft"]   = 0.3048;             name = tr("foot");                tmp_n[name] = "ft";
+    tmp_v["yd"]   = 0.9144;             name = tr("yard");                tmp_n[name] = "yd";
+    tmp_v["mi"]   = 1609.344;           name = tr("mile");                tmp_n[name] = "mi";
+    tmp_v["NM"]   = 1852.0;             name = tr("nautical mile ");      tmp_n[name] = "NM";
+    tmp_v["NL"]   = 5.556;              name = tr("nautical league");     tmp_n[name] = "NL";
+    tmp_v["ua"]   = 149597870700.0;     name = tr("astronomical unit");   tmp_n[name] = "ua";
+    tmp_v["a.l."] = 94607304725808.0e2; name = tr("light-year");          tmp_n[name] = "a.l.";
+    tmp_v["pc"]   = 3.085678e16;        name = tr("parsec");              tmp_n[name] = "pc";
+    units_values["length"] = tmp_v; units["length"] = tmp_n;
 
     // Mass: equivalence for 1kg -----------------------------------------------
     tmp_v.clear(); tmp_n.clear();
