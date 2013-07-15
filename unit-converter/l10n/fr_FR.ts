@@ -165,6 +165,16 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="86"/>
+        <source>shake</source>
+        <translation>shake</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cc" line="87"/>
+        <source>sigma</source>
+        <translation>sigma</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cc" line="88"/>
         <source>Planck time</source>
         <translation>temps de Planck</translation>
     </message>

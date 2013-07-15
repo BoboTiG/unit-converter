@@ -82,7 +82,9 @@ void MainWindow::all_units() {
     tmp_v["m"]    = 60.0;            name = tr("minute");        tmp_n[name] = "m";
     tmp_v["h"]    = 3600.0;          name = tr("hour");          tmp_n[name] = "h";
     tmp_v["d"]    = 24 * 3600.0;     name = tr("day");           tmp_n[name] = "d";
-    tmp_v["y"]    = 31556952;        name = tr("year");          tmp_n[name] = "y";
+    tmp_v["y"]    = 31556952.0;      name = tr("year");          tmp_n[name] = "y";
+    tmp_v["ns"]   = 1.0e-8;          name = tr("shake");         tmp_n[name] = "ns";
+    tmp_v["σ"]    = 1.0e-6;          name = tr("sigma");         tmp_n[name] = "σ";
     tmp_v["tP"]   = 1.351211818e-43; name = tr("Planck time");   tmp_n[name] = "tP";
     units_values["time"] = tmp_v; units["time"] = tmp_n;
 }
