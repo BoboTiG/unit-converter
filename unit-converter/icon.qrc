@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>res/copy.png</file>
+        <file>res/convert.png</file>
+        <file>res/invert.png</file>
+        <file>res/favicon.ico</file>
+    </qresource>
+</RCC>
