@@ -51,10 +51,26 @@ void MainWindow::all_units() {
     QString name;
 
     // Available units ---------------------------------------------------------
+    units_name["energy"]  = tr("Energy");
     units_name["length"]  = tr("Length") + " (L)";
     units_name["mass"]    = tr("Mass") + " (m)";
     units_name["surface"] = tr("Surface");
     units_name["time"]    = tr("Time") + " (t)";
+
+    // Energy: equivalence for 1J ----------------------------------------------
+    tmp_v.clear(); tmp_n.clear();
+    tmp_v["J"]               = 1.0;            name = tr("joule");                      tmp_n[name] = "J";
+    tmp_v["erg"]             = 1.0e-7;         name = tr("erg");                        tmp_n[name] = "erg";
+    tmp_v["eV"]              = 1.60217653e-19; name = tr("electronvolt");               tmp_n[name] = "eV";
+    tmp_v["cal\u209C\u2095"] = 4.184;          name = tr("thermochemical calorie");     tmp_n[name] = "cal\u209C\u2095";
+    tmp_v["cal\u2081\u2085"] = 4.1855;         name = tr("calorie [15 °C]").toLatin1(); tmp_n[name] = "cal\u2081\u2085";
+    tmp_v["cal"]             = 4.1868;         name = tr("calorie [international]");    tmp_n[name] = "cal";
+    tmp_v["kcal"]            = 4186.8;         name = tr("kilocalorie");                tmp_n[name] = "kcal";
+    tmp_v["Cal"]             = 4186.8;         name = tr("Calorie");                    tmp_n[name] = "Cal";
+    tmp_v["kWh, B.O.T.U."]   = 3600000;        name = tr("Board of Trade Unit");        tmp_n[name] = "kWh, B.O.T.U.";
+    tmp_v["tec"]             = 2.93076e10;     name = tr("tonne of coal equivalent");   tmp_n[name] = "tec";
+    tmp_v["tep"]             = 4.1868e10;      name = tr("tonne of oil equivalent");    tmp_n[name] = "tep";
+    units_values["energy"] = tmp_v; units["energy"] = tmp_n;
 
     // Length: equivalence for 1m ----------------------------------------------
     tmp_v.clear(); tmp_n.clear();
