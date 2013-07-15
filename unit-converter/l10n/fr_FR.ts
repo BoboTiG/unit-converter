@@ -39,9 +39,14 @@
         <translation>Copier le résultat.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="55"/>
+        <location filename="../mainwindow.cc" line="54"/>
         <source>Mass</source>
         <translation>Masse</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cc" line="55"/>
+        <source>Time</source>
+        <translation>Temps</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="59"/>
@@ -132,6 +137,36 @@
         <location filename="../mainwindow.cc" line="76"/>
         <source>atomic mass unit</source>
         <translation>unité de masse atomique</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cc" line="81"/>
+        <source>second</source>
+        <translation>seconde</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cc" line="82"/>
+        <source>minute</source>
+        <translation>minute</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cc" line="83"/>
+        <source>hour</source>
+        <translation>heure</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cc" line="84"/>
+        <source>day</source>
+        <translation>jour</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cc" line="85"/>
+        <source>year</source>
+        <translation>année grégorienne</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cc" line="86"/>
+        <source>Planck time</source>
+        <translation>temps de Planck</translation>
     </message>
 </context>
 </TS>
