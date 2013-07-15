@@ -60,6 +60,7 @@ void MainWindow::all_units() {
     tmp_v.clear(); tmp_n.clear();
     tmp_v["m"]    = 1.0;                name = tr("metre");               tmp_n[name] = "m";
     tmp_v["cm"]   = 1.0e-2;             name = tr("centimeter");          tmp_n[name] = "cm";
+    tmp_v["km"]   = 1000.0;             name = tr("kilometer");           tmp_n[name] = "km";
     tmp_v["fm"]   = 1.0e-15;            name = tr("femtometer");          tmp_n[name] = "fm";
     tmp_v["xu"]   = 100.21e-15;         name = tr("x-unit");              tmp_n[name] = "xu";
     tmp_v["Å"]    = 1.0e-10;            name = tr("ångström").toLatin1(); tmp_n[name] = "Å";
