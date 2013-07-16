@@ -67,7 +67,7 @@ void MainWindow::all_units() {
     tmp_v["cal"]             = 4.1868;         name = tr("calorie [international]");    tmp_n[name] = "cal";
     tmp_v["kcal"]            = 4186.8;         name = tr("kilocalorie");                tmp_n[name] = "kcal";
     tmp_v["Cal"]             = 4186.8;         name = tr("Calorie");                    tmp_n[name] = "Cal";
-    tmp_v["kWh, B.O.T.U."]   = 3600000;        name = tr("Board of Trade Unit");        tmp_n[name] = "kWh, B.O.T.U.";
+    tmp_v["kWh, B.O.T.U."]   = 3600000.0;      name = tr("Board of Trade Unit");        tmp_n[name] = "kWh, B.O.T.U.";
     tmp_v["tec"]             = 2.93076e10;     name = tr("tonne of coal equivalent");   tmp_n[name] = "tec";
     tmp_v["tep"]             = 4.1868e10;      name = tr("tonne of oil equivalent");    tmp_n[name] = "tep";
     units_values["energy"] = tmp_v; units["energy"] = tmp_n;
