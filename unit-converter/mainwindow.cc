@@ -43,7 +43,8 @@ MainWindow::~MainWindow() {
  * @brief All units belong to us.
  *        https://fr.wikipedia.org/wiki/Unit%C3%A9_de_base_du_syst%C3%A8me_international
  *        https://fr.wikipedia.org/wiki/Conversion_des_unités
- * @date 2013/07/15
+ *        http://www.wolframalpha.com/input/?i=1+erg+to+joule
+ * @date 2013/07/16
  */
 void MainWindow::all_units() {
     std::map<QString, double> tmp_v;
